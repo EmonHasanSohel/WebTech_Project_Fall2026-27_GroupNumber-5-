@@ -4,7 +4,8 @@
 
 
 ## Project Description
-SAHAYATA is a comprehensive disaster management and relief distribution platform. It connects victims in need with donators and volunteers, while admins monitor the entire process to ensure efficient delivery of relief materials.
+"During any natural or man-made crisis, one of the biggest hurdles is keeping everyone connected and coordinated. SAHAYATA is a centralized web platform built to solve just that—bridging the gap between victims who need urgent help, people wanting to donate, and volunteers ready on the ground.
+With this platform, victims can easily reach out with their specific needs, donors can safely contribute to relief efforts, and volunteers can update their delivery progress in real-time. Everything is managed through a streamlined admin panel, ensuring that aid bypasses the usual chaos and reaches the most vulnerable people right when they need it most."
 
 
 ## Team Members
