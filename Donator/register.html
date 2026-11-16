@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donator Registration</title>
+    <link rel="stylesheet" href="../Design/style.css">
+    <link rel="stylesheet" href="donator.css">
+</head>
+<body class="simple-page">
+    <div class="simple-box form-box">
+        <h1>Registration</h1>
+        <form id="registerForm">
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" placeholder="Enter your name">
+                <span id="nameError" class="error"></span>
+            </div>
+            <div class="form-group">
+                <label for="registerEmail">Email</label>
+                <input type="email" id="registerEmail" placeholder="Enter your email">
+                <span id="emailError" class="error"></span>
+            </div>
+            <div class="form-group">
+                <label for="registerPassword">Password</label>
+                <input type="password" id="registerPassword" placeholder="Create a password">
+                <span id="passError" class="error"></span>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" placeholder="Enter password again">
+                <span id="confirmPassError" class="error"></span>
+            </div>
+            <input type="submit" class="btn form-button" value="Register">
+            <div id="registerMessage" class="message"></div>
+        </form>
+        <p class="footer-note">Already have an account? <a class="small-link" href="login.html">Login</a></p>
+        <p class="footer-note"><a class="small-link" href="index.html">Back to Home</a></p>
+    </div>
+    <script src="JS/register.js"></script>
+</body>
+</html>
