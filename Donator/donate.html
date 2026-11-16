@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make a Donation</title>
+    <link rel="stylesheet" href="../Design/style.css">
+    <link rel="stylesheet" href="donator.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="topbar">
+            <div class="brand">ReliefLink | Donator</div>
+            <div class="nav-links">
+                <a href="dashboard.html">My Page</a>
+                <a href="requests.html">Requests</a>
+                <a href="donate.html">Donate</a>
+                <a href="tracking.html">My Donations</a>
+                <a href="#" id="logoutLink">Logout</a>
+            </div>
+        </nav>
+        <h1 class="page-heading">Make a Donation</h1>
+        <p class="page-subtitle">Choose an approved request and enter your donation details.</p>
+        <div class="form-box">
+            <form id="donationForm">
+                <div class="form-group"><label for="requestSelect">Disaster Request</label><select id="requestSelect"><option value="">Select a request</option></select><span id="requestError" class="error"></span></div>
+                <div class="form-group"><label for="donationType">Donation Type</label><select id="donationType"><option value="">Select type</option><option>Money</option><option>Food</option><option>Medicine</option><option>Clothing</option><option>Other</option></select><span id="typeError" class="error"></span></div>
+                <div class="form-group"><label for="itemName">Item Name (for items)</label><input type="text" id="itemName" placeholder="Example: Rice or water"><span id="itemError" class="error"></span></div>
+                <div class="form-group"><label for="donationAmount">Amount / Quantity</label><input type="number" id="donationAmount" min="0.01" step="any" placeholder="Enter a positive number"><span id="amountError" class="error"></span></div>
+                <div class="form-group"><label for="donationNote">Note (optional)</label><textarea id="donationNote"></textarea></div>
+                <input type="submit" class="btn form-button" value="Submit Donation">
+                <div id="donationMessage" class="message"></div>
+            </form>
+        </div>
+    </div>
+    <script src="JS/donate.js"></script>
+</body>
+</html>

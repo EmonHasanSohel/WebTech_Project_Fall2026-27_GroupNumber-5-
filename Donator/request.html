@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approved Disaster Requests</title>
+    <link rel="stylesheet" href="../Design/style.css">
+    <link rel="stylesheet" href="donator.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="topbar">
+            <div class="brand">ReliefLink | Donator</div>
+            <div class="nav-links">
+                <a href="dashboard.html">My Page</a>
+                <a href="requests.html">Requests</a>
+                <a href="donate.html">Donate</a>
+                <a href="tracking.html">My Donations</a>
+                <a href="#" id="logoutLink">Logout</a>
+            </div>
+        </nav>
+        <h1 class="page-heading">Approved Disaster Requests</h1>
+        <p class="page-subtitle">Only Admin-approved urgent and critical requests are shown.</p>
+        <div class="dashboard-grid">
+            <div class="stat-card"><h3>Available Requests</h3><strong id="requestCount">0</strong></div>
+        </div>
+        <div id="requestList" class="request-grid"></div>
+    </div>
+    <script src="JS/requests.js"></script>
+</body>
+</html>

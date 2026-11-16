@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donator Dashboard</title>
+    <link rel="stylesheet" href="../Design/style.css">
+    <link rel="stylesheet" href="donator.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="topbar">
+            <div class="brand">ReliefLink | Donator</div>
+            <div class="nav-links">
+                <a href="dashboard.html">My Page</a>
+                <a href="requests.html">Requests</a>
+                <a href="donate.html">Donate</a>
+                <a href="tracking.html">My Donations</a>
+                <a href="#" id="logoutLink">Logout</a>
+            </div>
+        </nav>
+        <h1 class="page-heading">Welcome, <span id="donatorName"></span></h1>
+        <p class="page-subtitle">Choose an option from the navigation bar to manage your donations.</p>
+        <div class="dashboard-grid">
+            <div class="stat-card"><h3>Browse Requests</h3><p>See approved urgent disaster requests.</p><a class="button-inline" href="requests.html">View Requests</a></div>
+            <div class="stat-card"><h3>Make a Donation</h3><p>Contribute money or essential resources.</p><a class="button-inline" href="donate.html">Donate Now</a></div>
+            <div class="stat-card"><h3>Track Donations</h3><p>Follow your donation until delivery.</p><a class="button-inline" href="tracking.html">Track Now</a></div>
+        </div>
+    </div>
+    <script src="JS/dashboard.js"></script>
+</body>
+</html>
