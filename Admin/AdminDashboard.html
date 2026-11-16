@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Disaster Management</title>
+    <link rel="stylesheet" href="../Design/style.css">
+</head>
+<body class="dashboard-body">
+
+   
+    <div class="navbar">
+        <div class="nav-brand">
+            <a href="../index.html">
+                <img src="../Images/logo.png" alt="Logo" class="nav-logo">
+            </a>
+            <span>Admin Control Panel</span>
+        </div>
+        <div class="nav-links">
+            <a href="AdminDashboard.html" class="nav-btn">Dashboard</a>
+            <a href="ManageRequest.html" class="nav-btn">Manage Requests</a>
+            <a href="ManageUsers.html" class="nav-btn"> Manage Users</a>
+            <a href="ManageDonations.html" class="nav-btn">Donations & Delivery</a>
+            <a href="AdminProfile.html" class="nav-btn"> Admin Profile</a>
+            <a href="AdminLogin.html" class="logout-btn">Logout</a>
+        </div>
+    </div>
+
+    <div class="dashboard-container">
+        
+       
+        <h2 class="section-title">Central Statistical Overview</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3> Total Victims</h3>
+                <p>120</p>
+            </div>
+            
+            <div class="stat-card">
+                <h3>Total Donators</h3>
+                <p>45</p>
+            </div>
+            <div class="stat-card">
+                <h3>Active Volunteers</h3>
+                <p>30</p>
+            </div>
+            <div class="stat-card">
+                <h3>Active Admins</h3>
+                <p>4</p>
+            </div>
+        </div>
+
+        <div class="stats-grid" style="margin-top: 20px;">
+            <div class="stat-card">
+                <h3>Pending Requests</h3>
+                <p style="color: #e67e22;">18</p>
+            </div>
+            <div class="stat-card">
+                <h3>Total Donations</h3>
+                <p style="color: #27ae60;">85</p>
+            </div>
+            <div class="stat-card">
+                <h3>Completed Deliveries</h3>
+                <p style="color: #2980b9;">64</p>
+            </div>
+        </div>
+
+        
+        <h2 class="section-title">Quick Administrative Actions</h2>
+        <div class="card-section" style="display: flex; gap: 15px; flex-wrap: wrap;">
+            <a href="ManageRequest.html" class="btn btn-admin" style="width: auto; padding: 12px 20px; text-decoration: none;">Review Victim Requests</a>
+            <a href="ManageUsers.html" class="btn btn-admin" style="width: auto; padding: 12px 20px; text-decoration: none; background-color: #2c3e50;">Manage Users & Admins</a>
+            <a href="ManageDonations.html" class="btn btn-admin" style="width: auto; padding: 12px 20px; text-decoration: none; background-color: #27ae60;">Assign Donation Deliveries</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
