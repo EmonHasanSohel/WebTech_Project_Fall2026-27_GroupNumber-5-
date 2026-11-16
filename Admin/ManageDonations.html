@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donations & Delivery Tracking - Admin Panel</title>
+    <link rel="stylesheet" href="../Design/style.css">
+</head>
+<body class="dashboard-body">
+
+  
+    <div class="navbar">
+        <div class="nav-brand">
+            <a href="../index.html">
+                <img src="../Images/logo.png" alt="Logo" class="nav-logo">
+            </a>
+            <span>Admin Control Panel</span>
+        </div>
+        <div class="nav-links">
+            <a href="AdminDashboard.html" class="nav-btn">Dashboard</a>
+            <a href="ManageRequest.html" class="nav-btn">Manage Requests</a>
+            <a href="ManageUsers.html" class="nav-btn">Manage Users</a>
+            <a href="ManageDonations.html" class="nav-btn">Donations & Delivery</a>
+            <a href="AdminProfile.html" class="nav-btn">Admin Profile</a>
+            <a href="AdminLogin.html" class="logout-btn">Logout</a>
+        </div>
+    </div>
+
+    <div class="dashboard-container">
+        
+       
+        <h2 class="section-title">Assign Volunteer to Donation Delivery</h2>
+        <div class="card-section" style="margin-bottom: 25px;">
+            <form onsubmit="return assignDelivery()">
+                <fieldset>
+                    <legend>Dispatch & Delivery Assignment</legend>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap; align-items: flex-end;">
+                        <div style="flex: 1; min-width: 220px;">
+                            <label for="donationSelect">Select Pending Donation:</label>
+                            <select id="donationSelect">
+                                <option value="">-- Choose Donation --</option>
+                                <option value="#DON-501|#REQ-101 (Ifreet Zareef)|Dry Food & Water (50 Packs)">#DON-501 - Dry Food & Water (For #REQ-101)</option>
+                                <option value="#DON-502|#REQ-103 (Karima Begum)|Emergency Medicine Kit">#DON-502 - Emergency Medicine Kit (For #REQ-103)</option>
+                            </select>
+                        </div>
+                        <div style="flex: 1; min-width: 200px;">
+                            <label for="volunteerSelect">Select Available Volunteer:</label>
+                            <select id="volunteerSelect">
+                                <option value="">-- Choose Volunteer --</option>
+                                <option value="Sadia Islam">Sadia Islam (Dhaka Zone)</option>
+                                <option value="Rakib Hasan">Rakib Hasan (Sylhet Zone)</option>
+                                <option value="Nusrat Jahan">Nusrat Jahan (Feni Zone)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <input type="submit" value="Assign Volunteer" class="btn btn-admin" style="width: auto; padding: 10px 20px; background-color: #27ae60;">
+                        </div>
+                    </div>
+                    <p id="assignErr" class="error-text" style="margin-top: 8px;"></p>
+                </fieldset>
+            </form>
+        </div>
+
+       
+        <h2 class="section-title">All System Donations</h2>
+        <div class="card-section" style="margin-bottom: 25px;">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Donation ID</th>
+                        <th>Donator Name</th>
+                        <th>Linked Request</th>
+                        <th>Item / Amount</th>
+                        <th>Donation Date</th>
+                        <th>Delivery Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#DON-501</td>
+                        <td>Tanvir Mahmud</td>
+                        <td>#REQ-101 (Ifreet Zareef)</td>
+                        <td>Dry Food & Water (50 Packs)</td>
+                        <td>2026-11-15</td>
+                        <td><span class="badge pending" id="don-stat-501">Pending Dispatch</span></td>
+                    </tr>
+                    <tr>
+                        <td>#DON-502</td>
+                        <td>Ayesha Siddika</td>
+                        <td>#REQ-103 (Karima Begum)</td>
+                        <td>Emergency Medicine Kit</td>
+                        <td>2026-11-16</td>
+                        <td><span class="badge pending" id="don-stat-502">Pending Dispatch</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+       
+        <h2 class="section-title">Active & Completed Deliveries</h2>
+        <div class="card-section">
+            <table class="data-table" id="deliveryTable">
+                <thead>
+                    <tr>
+                        <th>Volunteer Name</th>
+                        <th>Victim Name (Req ID)</th>
+                        <th>Donation Details</th>
+                        <th>Current Status</th>
+                        <th>Last Updated Timestamp</th>
+                    </tr>
+                </thead>
+                <tbody id="deliveryTableBody">
+                    <tr>
+                        <td>Rakib Hasan</td>
+                        <td>Fahim Ahmed (#REQ-102)</td>
+                        <td>20,000 BDT Cash & Blankets</td>
+                        <td><span class="badge approved">Delivered</span></td>
+                        <td>2026-11-16 04:30 PM</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script src="JS/ManageDonations.js"></script>
+</body>
+</html>
