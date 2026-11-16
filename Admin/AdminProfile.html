@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Profile - Disaster Management</title>
+    <link rel="stylesheet" href="../Design/style.css">
+</head>
+<body class="dashboard-body">
+
+    <div class="navbar">
+        <div class="nav-brand">
+            <a href="../index.html">
+                <img src="../Images/logo.png" alt="Logo" class="nav-logo">
+            </a>
+            <span>Admin Control Panel</span>
+        </div>
+        <div class="nav-links">
+            <a href="AdminDashboard.html" class="nav-btn">Dashboard</a>
+            <a href="ManageRequest.html" class="nav-btn">Manage Requests</a>
+            <a href="ManageUsers.html" class="nav-btn">Manage Users</a>
+            <a href="ManageDonations.html" class="nav-btn">Donations & Delivery</a>
+            <a href="AdminProfile.html" class="nav-btn">Admin Profile</a>
+            <a href="AdminLogin.html" class="logout-btn">Logout</a>
+        </div>
+    </div>
+
+    <div class="dashboard-container">
+        <h2 class="section-title">Admin Profile & Security</h2>
+        
+        <div class="form-container" style="margin: 0 auto; max-width: 650px;">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <img src="../Images/logo.png" alt="Admin Profile" style="width: 110px; height: 110px; border-radius: 50%; border: 3px solid #3498db; object-fit: cover;">
+                <h3 id="displayAdminName" style="color: #2c3e50; margin-top: 10px;">Md. Emon Hasan Sohel</h3>
+                <p style="color: #7f8c8d;">System Administrator | <span style="color: #27ae60; font-weight: bold;">Active Account</span></p>
+            </div>
+
+            <form onsubmit="return updateAdminInfo()">
+                <fieldset>
+                    <legend>Update Profile Information</legend>
+                    <table>
+                        <tr>
+                            <td><label for="editName">Full Name:</label></td>
+                            <td>
+                                <input type="text" id="editName" value="Md. Emon Hasan Sohel">
+                                <p id="editNameErr" class="error-text"></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="editEmail">Email Address:</label></td>
+                            <td>
+                                <input type="email" id="editEmail" value="admin@sahayata.org">
+                                <p id="editEmailErr" class="error-text"></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="editPhone">Phone Number:</label></td>
+                            <td>
+                                <input type="number" id="editPhone" value="01700000000">
+                                <p id="editPhoneErr" class="error-text"></p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><label>Gender:</label></td>
+                            <td>
+                                <input type="radio" id="editMale" name="editGender" value="Male" checked>
+                                <label for="editMale" style="margin-right: 12px; font-weight: normal;">Male</label>
+
+                                <input type="radio" id="editFemale" name="editGender" value="Female">
+                                <label for="editFemale" style="margin-right: 12px; font-weight: normal;">Female</label>
+
+                                <input type="radio" id="editOther" name="editGender" value="Other">
+                                <label for="editOther" style="font-weight: normal;">Other</label>
+                                <p id="editGenderErr" class="error-text"></p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="editAge">Age:</label></td>
+                            <td>
+                                <input type="number" id="editAge" min="18" max="80" value="23">
+                                <p id="editAgeErr" class="error-text"></p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="editAddress">Address:</label></td>
+                            <td>
+                                <textarea id="editAddress" rows="3" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">Bashundhara R/A, Dhaka, Bangladesh</textarea>
+                                <p id="editAddressErr" class="error-text"></p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="editNid">NID Number:</label></td>
+                            <td>
+                                <input type="number" id="editNid" value="1234567890">
+                                <p id="editNidErr" class="error-text"></p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="editNidDoc">NID Document:</label></td>
+                            <td>
+                                <span id="currentDocName" style="display: block; color: #2980b9; font-size: 13px; margin-bottom: 5px;">Current File: nid_emon_verified.pdf</span>
+                                <input type="file" id="editNidDoc" accept=".pdf,.jpg,.jpeg,.png" style="padding: 4px 0;">
+                                <small style="display: block; color: #7f8c8d;">Upload new file only if you want to replace</small>
+                                <p id="editNidDocErr" class="error-text"></p>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div style="text-align: center; margin-top: 15px;">
+                        <input type="submit" value="Save Profile Changes" class="btn btn-admin" style="width: auto; padding: 10px 25px;">
+                    </div>
+                </fieldset>
+            </form>
+
+            <form onsubmit="return resetAdminPassword()" style="margin-top: 20px;">
+                <fieldset>
+                    <legend>Reset Password</legend>
+                    <table>
+                        <tr>
+                            <td><label for="oldPass">Current Password:</label></td>
+                            <td>
+                                <input type="password" id="oldPass" placeholder="Enter Current Password">
+                                <p id="oldPassErr" class="error-text"></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="newPass">New Password:</label></td>
+                            <td>
+                                <input type="password" id="newPass" placeholder="Enter New Password">
+                                <p id="newPassErr" class="error-text"></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="confirmPass">Confirm Password:</label></td>
+                            <td>
+                                <input type="password" id="confirmPass" placeholder="Confirm New Password">
+                                <p id="confirmPassErr" class="error-text"></p>
+                            </td>
+                        </tr>
+                    </table>
+                    <div style="text-align: center; margin-top: 15px;">
+                        <input type="submit" value="Reset Password" class="btn btn-admin" style="width: auto; padding: 10px 25px; background-color: #e67e22;">
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <script src="JS/AdminProfile.js"></script>
+</body>
+</html>
