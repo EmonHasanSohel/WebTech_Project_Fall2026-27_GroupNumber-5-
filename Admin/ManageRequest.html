@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Requests - Admin Panel</title>
+    <link rel="stylesheet" href="../Design/style.css">
+</head>
+<body class="dashboard-body">
+
+   
+    <div class="navbar">
+        <div class="nav-brand">
+            <a href="../index.html">
+                <img src="../Images/logo.png" alt="Logo" class="nav-logo">
+            </a>
+            <span>Admin Control Panel</span>
+        </div>
+        <div class="nav-links">
+            <a href="AdminDashboard.html" class="nav-btn">Dashboard</a>
+            <a href="ManageRequest.html" class="nav-btn">Manage Requests</a>
+            <a href="ManageUsers.html" class="nav-btn">Manage Users</a>
+            <a href="ManageDonations.html" class="nav-btn">Donations & Delivery</a>
+            <a href="AdminProfile.html" class="nav-btn">Admin Profile</a>
+            <a href="AdminLogin.html" class="logout-btn">Logout</a>
+        </div>
+    </div>
+
+    <div class="dashboard-container">
+        <h2 class="section-title">All Disaster Help Requests</h2>
+        
+        <div class="card-section">
+           
+            <div style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+                <input type="text" id="searchInput" onkeyup="filterRequests()" placeholder="Search by Victim Name or Location..." style="flex: 2; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                
+                <select id="typeFilter" onchange="filterRequests()" style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                    <option value="All">All Disaster Types</option>
+                    <option value="Flood">Flood</option>
+                    <option value="Cyclone">Cyclone</option>
+                    <option value="Medical Emergency">Medical Emergency</option>
+                </select>
+
+                <select id="statusFilter" onchange="filterRequests()" style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                    <option value="All">All Status</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Approved">Approved</option>
+                    <option value="Rejected">Rejected</option>
+                </select>
+            </div>
+
+            <table class="data-table" id="requestTable">
+                <thead>
+                    <tr>
+                        <th>Req ID</th>
+                        <th>Victim Name</th>
+                        <th>Disaster Type</th>
+                        <th>Location</th>
+                        <th>Submission Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#REQ-101</td>
+                        <td>Ifreet Zareef</td>
+                        <td>Flood</td>
+                        <td>Dhaka</td>
+                        <td>2026-11-14</td>
+                        <td><span class="badge pending" id="status-101">Pending</span></td>
+                        <td>
+                            <button class="action-btn approve-btn" onclick="updateReqStatus('101', 'Approved')">Approve</button>
+                            <button class="action-btn reject-btn" onclick="updateReqStatus('101', 'Rejected')">Reject</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#REQ-102</td>
+                        <td>Fahim Ahmed</td>
+                        <td>Cyclone</td>
+                        <td>Sylhet</td>
+                        <td>2026-11-15</td>
+                        <td><span class="badge pending" id="status-102">Pending</span></td>
+                        <td>
+                            <button class="action-btn approve-btn" onclick="updateReqStatus('102', 'Approved')">Approve</button>
+                            <button class="action-btn reject-btn" onclick="updateReqStatus('102', 'Rejected')">Reject</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#REQ-103</td>
+                        <td>Karima Begum</td>
+                        <td>Medical Emergency</td>
+                        <td>Feni</td>
+                        <td>2026-11-16</td>
+                        <td><span class="badge approved" id="status-103">Approved</span></td>
+                        <td>
+                            <button class="action-btn approve-btn" onclick="updateReqStatus('103', 'Approved')">Approve</button>
+                            <button class="action-btn reject-btn" onclick="updateReqStatus('103', 'Rejected')">Reject</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="JS/ManageRequest.js"></script>
+</body>
+</html>

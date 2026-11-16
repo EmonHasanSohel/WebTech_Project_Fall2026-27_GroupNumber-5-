@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Registration - Disaster Management</title>
+    <link rel="stylesheet" href="../Design/style.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <div style="text-align: center; margin-bottom: 15px;">
+            <a href="../index.html">
+                <img src="../Images/logo.png" alt="SAHAYATA Logo" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+            </a>
+        </div>
+
+        <h2 style="text-align: center; color: #2c3e50;">Admin Registration</h2>
+
+        <form onsubmit="return validateAdminReg()">
+            <fieldset>
+                <legend>Administrator Details</legend>
+                <table>
+                    <tr>
+                        <td><label for="regName">Full Name:</label></td>
+                        <td>
+                            <input type="text" id="regName" placeholder="Enter Full Name">
+                            <p id="regNameErr" class="error-text"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="regEmail">Email Address:</label></td>
+                        <td>
+                            <input type="text" id="regEmail" placeholder="Enter Email Address">
+                            <p id="regEmailErr" class="error-text"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="regPhone">Phone Number:</label></td>
+                        <td>
+                            <input type="number" id="regPhone" placeholder="017XXXXXXXX">
+                            <p id="regPhoneErr" class="error-text"></p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label>Gender:</label></td>
+                        <td>
+                            <input type="radio" id="genderMale" name="gender" value="Male">
+                            <label for="genderMale" style="margin-right: 12px; font-weight: normal;">Male</label>
+
+                            <input type="radio" id="genderFemale" name="gender" value="Female">
+                            <label for="genderFemale" style="margin-right: 12px; font-weight: normal;">Female</label>
+
+                            <input type="radio" id="genderOther" name="gender" value="Other">
+                            <label for="genderOther" style="font-weight: normal;">Other</label>
+                            <p id="regGenderErr" class="error-text"></p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="regAge">Age:</label></td>
+                        <td>
+                            <input type="number" id="regAge" min="18" max="80" placeholder="Enter Age (e.g., 24)">
+                            <p id="regAgeErr" class="error-text"></p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="regAddress">Address:</label></td>
+                        <td>
+                            <textarea id="regAddress" rows="3" placeholder="Enter Full Present Address" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
+                            <p id="regAddressErr" class="error-text"></p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="regNid">NID Number:</label></td>
+                        <td>
+                            <input type="number" id="regNid" placeholder="Enter 10 or 17 digit NID Number">
+                            <p id="regNidErr" class="error-text"></p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="regNidDoc">NID Document:</label></td>
+                        <td>
+                            <input type="file" id="regNidDoc" accept=".pdf,.jpg,.jpeg,.png" style="padding: 5px 0;">
+                            <small style="display: block; color: #7f8c8d;">Accepted: PDF, JPG, PNG</small>
+                            <p id="regNidDocErr" class="error-text"></p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="regPass">Password:</label></td>
+                        <td>
+                            <input type="password" id="regPass" placeholder="Min 8 chars (Strong)">
+                            <p id="regPassErr" class="error-text"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="regConfirmPass">Confirm Password:</label></td>
+                        <td>
+                            <input type="password" id="regConfirmPass" placeholder="Re-enter Password">
+                            <p id="regConfirmPassErr" class="error-text"></p>
+                        </td>
+                    </tr>
+                </table>
+
+                <div style="text-align: center; margin-top: 15px;">
+                    <input type="submit" value="Register Admin" class="btn btn-admin">
+                </div>
+            </fieldset>
+        </form>
+
+        <p style="text-align: center; margin-top: 15px;">
+            Already have an admin account? <a href="AdminLogin.html">Login Here</a>
+        </p>
+    </div>
+
+    <script src="JS/AdminRegistration.js"></script>
+</body>
+</html>

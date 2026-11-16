@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Users & Admins - Admin Panel</title>
+    <link rel="stylesheet" href="../Design/style.css">
+</head>
+<body class="dashboard-body">
+
+   
+    <div class="navbar">
+        <div class="nav-brand">
+            <a href="../index.html">
+                <img src="../Images/logo.png" alt="Logo" class="nav-logo">
+            </a>
+            <span>Admin Control Panel</span>
+        </div>
+        <div class="nav-links">
+            <a href="AdminDashboard.html" class="nav-btn">Dashboard</a>
+            <a href="ManageRequest.html" class="nav-btn">Manage Requests</a>
+            <a href="ManageUsers.html" class="nav-btn">Manage Users</a>
+            <a href="ManageDonations.html" class="nav-btn">Donations & Delivery</a>
+            <a href="AdminProfile.html" class="nav-btn">Admin Profile</a>
+            <a href="AdminLogin.html" class="logout-btn">Logout</a>
+        </div>
+    </div>
+
+    <div class="dashboard-container">
+        
+       
+        <h2 class="section-title">Authorize New Admin Account</h2>
+        <div class="card-section" style="margin-bottom: 25px;">
+            <form onsubmit="return createNewAdmin()">
+                <fieldset>
+                    <legend>Create New Administrator</legend>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap; align-items: flex-end;">
+                        <div style="flex: 1; min-width: 200px;">
+                            <label for="newAdminName">Admin Name:</label>
+                            <input type="text" id="newAdminName" placeholder="Enter Full Name">
+                        </div>
+                        <div style="flex: 1; min-width: 200px;">
+                            <label for="newAdminEmail">Admin Email:</label>
+                            <input type="email" id="newAdminEmail" placeholder="Enter Email">
+                        </div>
+                        <div style="flex: 1; min-width: 180px;">
+                            <label for="newAdminPhone">Contact Number:</label>
+                            <input type="number" id="newAdminPhone" placeholder="017XXXXXXXX">
+                        </div>
+                        <div>
+                            <input type="submit" value="Create Admin" class="btn btn-admin" style="width: auto; padding: 10px 20px;">
+                        </div>
+                    </div>
+                    <p id="adminCreateErr" class="error-text" style="margin-top: 8px;"></p>
+                </fieldset>
+            </form>
+        </div>
+
+        <h2 class="section-title">All System Accounts (Users & Admins)</h2>
+        <div class="card-section">
+
+            <div style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+                <input type="text" id="userSearchInput" onkeyup="filterUsers()" placeholder="Search by Name or Email..." style="flex: 2; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                
+                <select id="roleFilter" onchange="filterUsers()" style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                    <option value="All">All Roles</option>
+                    <option value="Admin">Admin</option>
+                    <option value="Victim">Victim</option>
+                    <option value="Donator">Donator</option>
+                    <option value="Volunteer">Volunteer</option>
+                </select>
+            </div>
+
+            <table class="data-table" id="userTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Role</th>
+                        <th>Email / Contact</th>
+                        <th>Joined Date</th>
+                        <th>Account Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="userTableBody">
+                    <tr>
+                        <td>Md. Emon Hasan Sohel</td>
+                        <td><strong>Admin</strong></td>
+                        <td>admin@sahayata.org</td>
+                        <td>2026-10-01</td>
+                        <td><span class="badge approved" id="u-stat-1">Active</span></td>
+                        <td>
+                            <button class="action-btn reject-btn" id="u-btn-1" onclick="toggleUserStatus(1)">Deactivate</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ifreet Zareef</td>
+                        <td>Victim</td>
+                        <td>ifreet@gmail.com</td>
+                        <td>2026-11-10</td>
+                        <td><span class="badge approved" id="u-stat-2">Active</span></td>
+                        <td>
+                            <button class="action-btn reject-btn" id="u-btn-2" onclick="toggleUserStatus(2)">Deactivate</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tanvir Mahmud</td>
+                        <td>Donator</td>
+                        <td>tanvir@yahoo.com</td>
+                        <td>2026-11-12</td>
+                        <td><span class="badge approved" id="u-stat-3">Active</span></td>
+                        <td>
+                            <button class="action-btn reject-btn" id="u-btn-3" onclick="toggleUserStatus(3)">Deactivate</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sadia Islam</td>
+                        <td>Volunteer</td>
+                        <td>sadia@sahayata.org</td>
+                        <td>2026-11-13</td>
+                        <td><span class="badge rejected" id="u-stat-4">Inactive</span></td>
+                        <td>
+                            <button class="action-btn approve-btn" id="u-btn-4" onclick="toggleUserStatus(4)">Activate</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="JS/ManageUsers.js"></script>
+</body>
+</html>

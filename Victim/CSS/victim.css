@@ -1,0 +1,195 @@
+
+body {
+    min-height: 100vh;
+    height: auto;
+    padding: 35px 15px;
+    align-items: center;
+}
+
+.victim-container {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    padding: 35px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.brand-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.brand-section .logo {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto 15px;
+    object-fit: contain;
+}
+
+.brand-section h1 {
+    color: #2c3e50;
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.brand-section p {
+    color: #666666;
+    margin-bottom: 0;
+}
+
+.auth-section h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.auth-section > p {
+    text-align: center;
+    color: #666666;
+    margin-bottom: 25px;
+}
+
+.auth-section form > div {
+    margin-bottom: 18px;
+}
+
+.auth-section form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333333;
+    font-weight: 600;
+}
+
+.auth-section input:not([type="checkbox"]),
+.auth-section select,
+.auth-section textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d5dce5;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    outline: none;
+}
+
+.auth-section input:focus,
+.auth-section select:focus,
+.auth-section textarea:focus {
+    border-color: #34495e;
+}
+
+.auth-section textarea {
+    resize: vertical;
+}
+
+.auth-section form button[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    background-color: #34495e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.auth-section form button[type="submit"]:hover {
+    background-color: #e67e22;
+}
+
+.auth-section button[type="button"] {
+    color: #e67e22;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.auth-section form > div:has(#remember-me) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.auth-section form > div:has(#remember-me) label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 0;
+}
+
+.auth-section form > div:has(#remember-me) button {
+    font-size: 13px;
+}
+
+.auth-section > p:last-child {
+    margin-top: 22px;
+    margin-bottom: 0;
+}
+
+.back-home {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.back-home a {
+    color: #34495e;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.back-home a:hover {
+    color: #e67e22;
+}
+
+@media (max-width: 600px) {
+    .victim-container {
+        padding: 25px 18px;
+    }
+}
+
+
+.victim-container {
+    font-size: 15px;
+}
+
+.brand-section h1 {
+    font-size: 28px;
+}
+
+.auth-section h2 {
+    font-size: 24px;
+}
+
+.auth-section > p {
+    font-size: 14px;
+}
+
+.auth-section form label {
+    font-size: 14px;
+}
+
+.auth-section input:not([type="checkbox"]),
+.auth-section select,
+.auth-section textarea {
+    font-size: 14px;
+    padding: 12px;
+}
+
+.auth-section form button[type="submit"] {
+    font-size: 16px;
+    padding: 13px;
+}
+
+.auth-section > p:last-child {
+    font-size: 14px;
+}
+
+.back-home {
+    font-size: 14px;
+}
