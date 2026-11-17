@@ -1,6 +1,8 @@
 
 function updateReqStatus(id, newStatus) {
     let statusBadge = document.getElementById("status-" + id);
+    let row = statusBadge.closest("tr");
+    let buttons = row.querySelectorAll("button");
     
     if (newStatus === "Approved") {
         statusBadge.innerHTML = "Approved";
@@ -12,8 +14,16 @@ function updateReqStatus(id, newStatus) {
         statusBadge.className = "badge rejected";
         alert("Request #REQ-" + id + " Rejected." + (reason ? " Reason: " + reason : ""));
     }
+    
+    buttons.forEach(btn => {
+        btn.disabled = true;
+        btn.style.opacity = "0.5";
+        btn.style.cursor = "not-allowed";
+    });
+
     filterRequests();
 }
+
 
 
 function filterRequests() {
