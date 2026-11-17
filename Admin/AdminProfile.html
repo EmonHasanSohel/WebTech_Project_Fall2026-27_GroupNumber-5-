@@ -124,21 +124,30 @@
                         <tr>
                             <td><label for="oldPass">Current Password:</label></td>
                             <td>
-                                <input type="password" id="oldPass" placeholder="Enter Current Password">
+                                <div style="position: relative; width: 100%;">
+                                    <input type="password" id="oldPass" placeholder="Enter Current Password" style="padding-right: 35px; box-sizing: border-box;">
+                                    <span onclick="togglePassword('oldPass', this)" title="Show/Hide Password" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; font-size: 16px; user-select: none;">👁️</span>
+                                </div>
                                 <p id="oldPassErr" class="error-text"></p>
                             </td>
                         </tr>
                         <tr>
                             <td><label for="newPass">New Password:</label></td>
                             <td>
-                                <input type="password" id="newPass" placeholder="Enter New Password">
+                                <div style="position: relative; width: 100%;">
+                                    <input type="password" id="newPass" placeholder="Enter New Password" style="padding-right: 35px; box-sizing: border-box;">
+                                    <span onclick="togglePassword('newPass', this)" title="Show/Hide Password" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; font-size: 16px; user-select: none;">👁️</span>
+                                </div>
                                 <p id="newPassErr" class="error-text"></p>
                             </td>
                         </tr>
                         <tr>
                             <td><label for="confirmPass">Confirm Password:</label></td>
                             <td>
-                                <input type="password" id="confirmPass" placeholder="Confirm New Password">
+                                <div style="position: relative; width: 100%;">
+                                    <input type="password" id="confirmPass" placeholder="Confirm New Password" style="padding-right: 35px; box-sizing: border-box;">
+                                    <span onclick="togglePassword('confirmPass', this)" title="Show/Hide Password" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; font-size: 16px; user-select: none;">👁️</span>
+                                </div>
                                 <p id="confirmPassErr" class="error-text"></p>
                             </td>
                         </tr>
@@ -152,5 +161,6 @@
     </div>
 
     <script src="JS/AdminProfile.js"></script>
+    <script src="../JS/common.js"></script>
 </body>
 </html>

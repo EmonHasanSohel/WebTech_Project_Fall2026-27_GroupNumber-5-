@@ -90,18 +90,23 @@
                             <p id="regNidDocErr" class="error-text"></p>
                         </td>
                     </tr>
-
                     <tr>
                         <td><label for="regPass">Password:</label></td>
                         <td>
-                            <input type="password" id="regPass" placeholder="Min 8 chars (Strong)">
+                            <div style="position: relative; width: 100%;">
+                                <input type="password" id="regPass" placeholder="Min 8 chars (Strong)" style="padding-right: 35px; box-sizing: border-box;">
+                                <span onclick="togglePassword('regPass', this)" title="Show/Hide Password" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; font-size: 16px; user-select: none;">👁️</span>
+                            </div>
                             <p id="regPassErr" class="error-text"></p>
                         </td>
                     </tr>
                     <tr>
                         <td><label for="regConfirmPass">Confirm Password:</label></td>
                         <td>
-                            <input type="password" id="regConfirmPass" placeholder="Re-enter Password">
+                            <div style="position: relative; width: 100%;">
+                                <input type="password" id="regConfirmPass" placeholder="Re-enter Password" style="padding-right: 35px; box-sizing: border-box;">
+                                <span onclick="togglePassword('regConfirmPass', this)" title="Show/Hide Password" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; font-size: 16px; user-select: none;">👁️</span>
+                            </div>
                             <p id="regConfirmPassErr" class="error-text"></p>
                         </td>
                     </tr>
@@ -119,5 +124,6 @@
     </div>
 
     <script src="JS/AdminRegistration.js"></script>
+    <script src="../JS/common.js"></script>
 </body>
 </html>
