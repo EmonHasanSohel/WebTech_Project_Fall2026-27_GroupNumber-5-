@@ -31,7 +31,10 @@
                     <tr>
                         <td><label for="loginPass">Password:</label></td>
                         <td>
-                            <input type="password" id="loginPass" placeholder="Enter Password">
+                            <div style="position: relative; width: 100%;">
+                                <input type="password" id="loginPass" placeholder="Enter Password" style="padding-right: 35px; box-sizing: border-box;">
+                                <span onclick="togglePassword('loginPass', this)" title="Show/Hide Password" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; font-size: 16px; user-select: none;">👁️</span>
+                            </div>
                             <p id="loginPassError" class="error-text"></p>
                         </td>
                     </tr>
@@ -94,5 +97,6 @@
     </div>
 
     <script src="JS/AdminLogin.js"></script>
+    <script src="../JS/common.js"></script>
 </body>
 </html>

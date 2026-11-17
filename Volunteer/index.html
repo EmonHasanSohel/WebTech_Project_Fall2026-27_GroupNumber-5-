@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAHAYATA - Volunteer Portal</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+<header class="header">
+    <h1>SAHAYATA</h1>
+    <p>Disaster Response and Resource Management Platform</p>
+</header>
+<nav class="topnav">
+    <a href="#" onclick="showPage('overview')">Overview</a>
+    <a href="#" onclick="showPage('assignments')">My Assignments</a>
+    <a href="#" onclick="showPage('history')">Delivery History</a>
+    <a href="#" onclick="showPage('profile')">My Profile</a>
+    <a href="#" onclick="logout()">Log Out</a>
+</nav>
+
+<section id="loginPage" class="login-area">
+    <fieldset class="form-box">
+        <form name="loginForm" onsubmit="return validateLogin()">
+            <h2 class="form-title">Volunteer Login</h2>
+            <label for="loginEmail">Email Address:</label>
+            <input type="email" id="loginEmail" name="loginEmail" placeholder="Enter your email" required>
+            <label for="loginPassword">Password:</label>
+            <input type="password" id="loginPassword" name="loginPassword" placeholder="Enter your password" minlength="6" required>
+            <p id="loginError" class="error"></p>
+            <input type="submit" value="Login" class="button">
+        </form>
+        <p class="form-note">New volunteer? <a href="#" onclick="showRegister()">Create an account</a></p>
+        <p class="demo-note">Demo: volunteer@sahayata.com / 123456</p>
+    </fieldset>
+</section>
+
+<section id="registerPage" class="login-area">
+    <fieldset class="form-box">
+        <legend>Volunteer Registration</legend>
+        <form name="registerForm" onsubmit="return validateRegistration()">
+            <label for="regName">Full Name:</label>
+            <input type="text" id="regName" name="regName" placeholder="Enter your full name" required>
+            <label for="regPhone">Contact Number:</label>
+            <input type="text" id="regPhone" name="regPhone" placeholder="01XXXXXXXXX" pattern="01[0-9]{9}" required>
+            <label for="regEmail">Email Address:</label>
+            <input type="email" id="regEmail" name="regEmail" placeholder="Enter your email" required>
+            <label for="regAddress">Address:</label>
+            <textarea id="regAddress" name="regAddress" rows="3" placeholder="Enter your address" required></textarea>
+            <label for="regPassword">Password:</label>
+            <input type="password" id="regPassword" name="regPassword" minlength="6" required>
+            <label for="regConfirmPassword">Confirm Password:</label>
+            <input type="password" id="regConfirmPassword" name="regConfirmPassword" minlength="6" required>
+            <p id="registerError" class="error"></p>
+            <input type="submit" value="Register" class="button">
+        </form>
+        <p class="form-note">Already registered? <a href="#" onclick="showLogin()">Login here</a></p>
+    </fieldset>
+</section>
+
+<main id="portalPage">
+<section id="overviewPage" class="content-section">
+    <h2>Volunteer Dashboard</h2>
+    <p>Welcome, <strong id="welcomeName">Volunteer</strong>!</p>
+    <p>Check your assigned relief delivery tasks and update delivery progress.</p>
+    <div class="summary-row">
+        <div class="summary-box"><h3>Assigned Tasks</h3><p id="assignedCount">4</p></div>
+        <div class="summary-box"><h3>Pending</h3><p id="pendingCount">1</p></div>
+        <div class="summary-box"><h3>In Progress</h3><p id="progressCount">2</p></div>
+        <div class="summary-box"><h3>Delivered</h3><p id="deliveredCount">1</p></div>
+    </div>
+    <h2>Recent Assignments</h2>
+    <div class="task-row">
+        <div class="task-card"><h3>DL-101 - Food and Drinking Water</h3><p>Victim: Ayesha Begum</p><p>Location: Uttara, Dhaka</p><p>Status: <strong id="overviewStatus1">Pending</strong></p></div>
+        <div class="task-card"><h3>DL-102 - Emergency Medicine</h3><p>Victim: Rahim Uddin</p><p>Location: Mirpur, Dhaka</p><p>Status: <strong id="overviewStatus2">In Transit</strong></p></div>
+    </div>
+</section>
+
+<section id="assignmentsPage" class="content-section">
+    <h2>My Assigned Tasks</h2><p>Update the delivery status after each step.</p>
+    <div class="task-row">
+        <div class="task-card"><h3>DL-101 - Food and Drinking Water</h3><p>Victim: Ayesha Begum</p><p>Location: Uttara, Dhaka</p><p>Details: Deliver food packages and drinking water.</p><p>Current Status: <strong id="taskStatus1">Pending</strong></p>
+            <label for="selectStatus1">Update Status:</label><select id="selectStatus1" name="selectStatus1"><option>Pending</option><option>Picked Up</option><option>In Transit</option><option>Delivered</option></select>
+            <input type="button" value="Save Status" class="button" onclick="updateTask1()"></div>
+        <div class="task-card"><h3>DL-102 - Emergency Medicine</h3><p>Victim: Rahim Uddin</p><p>Location: Mirpur, Dhaka</p><p>Details: Deliver a first-aid kit and essential medicine.</p><p>Current Status: <strong id="taskStatus2">In Transit</strong></p>
+            <label for="selectStatus2">Update Status:</label><select id="selectStatus2" name="selectStatus2"><option>Pending</option><option>Picked Up</option><option selected>In Transit</option><option>Delivered</option></select>
+            <input type="button" value="Save Status" class="button" onclick="updateTask2()"></div>
+        <div class="task-card"><h3>DL-103 - Clothes and Blankets</h3><p>Victim: Fatema Khatun</p><p>Location: Savar, Dhaka</p><p>Details: Deliver blankets and clothing packages.</p><p>Current Status: <strong id="taskStatus3">Delivered</strong></p>
+            <label for="selectStatus3">Update Status:</label><select id="selectStatus3" name="selectStatus3"><option>Pending</option><option>Picked Up</option><option>In Transit</option><option selected>Delivered</option></select>
+            <input type="button" value="Save Status" class="button" onclick="updateTask3()"></div>
+        <div class="task-card"><h3>DL-104 - Clean Water</h3><p>Victim: Karim Mia</p><p>Location: Keraniganj, Dhaka</p><p>Details: Deliver clean drinking water to an affected family.</p><p>Current Status: <strong id="taskStatus4">Picked Up</strong></p>
+            <label for="selectStatus4">Update Status:</label><select id="selectStatus4" name="selectStatus4"><option>Pending</option><option selected>Picked Up</option><option>In Transit</option><option>Delivered</option></select>
+            <input type="button" value="Save Status" class="button" onclick="updateTask4()"></div>
+    </div>
+</section>
+
+<section id="historyPage" class="content-section">
+    <h2>Delivery History</h2><p>List of completed relief deliveries.</p>
+    <table border="1"><caption>Completed Delivery Records</caption><thead><tr><th>Task ID</th><th>Victim Name</th><th>Donation</th><th>Location</th><th>Status</th></tr></thead><tbody>
+        <tr id="historyRow103"><td>DL-103</td><td>Fatema Khatun</td><td>Clothes and Blankets</td><td>Savar, Dhaka</td><td>Delivered</td></tr>
+        <tr id="historyRow101"><td>DL-101</td><td>Ayesha Begum</td><td>Food and Drinking Water</td><td>Uttara, Dhaka</td><td>Delivered</td></tr>
+        <tr id="historyRow102"><td>DL-102</td><td>Rahim Uddin</td><td>Emergency Medicine</td><td>Mirpur, Dhaka</td><td>Delivered</td></tr>
+        <tr id="historyRow104"><td>DL-104</td><td>Karim Mia</td><td>Clean Water</td><td>Keraniganj, Dhaka</td><td>Delivered</td></tr>
+    </tbody></table>
+</section>
+
+<section id="profilePage" class="content-section">
+    <h2>My Volunteer Profile</h2>
+    <fieldset class="profile-box"><legend>Profile Information</legend>
+        <form name="profileForm" onsubmit="return updateProfile()">
+            <label for="profileName">Full Name:</label><input type="text" id="profileName" name="profileName" required>
+            <label for="profilePhone">Contact Number:</label><input type="text" id="profilePhone" name="profilePhone" pattern="01[0-9]{9}" required>
+            <label for="profileEmail">Email Address:</label><input type="email" id="profileEmail" name="profileEmail" required>
+            <label for="profileAddress">Address:</label><textarea id="profileAddress" name="profileAddress" rows="3" required></textarea>
+            <p id="profileMessage"></p><input type="submit" value="Update Profile" class="button">
+        </form>
+    </fieldset>
+</section>
+
+</main>
+<footer class="footer"><p>© 2026 SAHAYATA - Volunteer Portal</p><p>Frontend demonstration project</p></footer>
+<script src="script.js"></script>
+</body>
+</html>
